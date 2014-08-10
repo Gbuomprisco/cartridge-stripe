@@ -29,7 +29,7 @@ def payment_handler(request, order_form, order):
     total = order.total
     try:
         charge = stripe.Charge.create(amount=int(total) * 100,
-                                      currency="usd",
+                                      currency="gbp",
                                       card=tok,
                                       description=order)
         return charge.id
